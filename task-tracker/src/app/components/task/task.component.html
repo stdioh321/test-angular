@@ -1,9 +1,11 @@
-<div class="task d-flex alert alert-info mb-0">
+<div class="task d-flex alert alert-secondary mb-0">
     <div class="mr-4 align-self-start">{{task?.id}}</div>
     <div class="mr-auto">
         <div>{{task?.text}}</div>
         <div class="small text-muted">{{task?.day}}</div>
     </div>
 
-    <div>{{task?.reminder ? "OK" : ""}}</div>
+    <div>
+        <fa-icon [ngStyle]="{'color':'red'}" [icon]="fa.faTimes" (click)="clickDelete(task)"></fa-icon>
+    </div>
 </div>

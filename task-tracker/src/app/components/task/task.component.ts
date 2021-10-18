@@ -1,5 +1,7 @@
 import { Task } from 'src/app/models/Task';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import  * as fa  from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-task',
@@ -7,10 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
-  @Input() task:Task|null=null;
+  @Input() task!:Task;
+  @Output() deleteClick = new EventEmitter<Task>();
+  fa = fa;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  clickDelete(task:Task){
+    this.deleteClick.emit(task);
+  }
 }

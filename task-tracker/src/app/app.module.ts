@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // CUSTOM ####################################################################################################################
 import { HeaderComponent } from './components/header/header.component';
@@ -25,7 +26,8 @@ import { TaskComponent } from './components/task/task.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
 
   ],
   providers: [

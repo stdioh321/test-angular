@@ -27,11 +27,10 @@ export class TasksComponent implements OnInit {
 
   async  ngOnInit(): Promise<any> {
     try{
-
       this.tasks =  await this.tasksService.findAll();
     }catch(err){
       if(err instanceof HttpErrorResponse){
-        console.log(err.message);
+        console.log({err});
       }else{
         console.log({err});
 
@@ -42,9 +41,18 @@ export class TasksComponent implements OnInit {
 
   }
 
-  doSomething(item:TemplateRef<ElementRef>){
-    console.log(item);
+  async onTaskDelete(task:Task){
 
+    if(!confirm("Are you sure?")) return;
+
+    try {
+      const id:number = task.id as number ;
+      await this.tasksService.deleteById(id);
+      this.tasks= this.tasks.filter(task=>task.id != id);
+    } catch (error) {
+      console.log({error});
+
+    }
   }
 
 }
