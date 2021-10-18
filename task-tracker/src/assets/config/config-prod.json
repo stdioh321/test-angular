@@ -1,0 +1,4 @@
+{
+    "env": "PROD",
+    "baseUrl": "http://localhost:3000"
+}

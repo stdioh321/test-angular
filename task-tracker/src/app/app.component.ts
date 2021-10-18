@@ -11,7 +11,7 @@ export class AppComponent  implements OnInit {
   public msg:number = 1;
 
   ngOnInit(){
-    console.log("ngOnInit");
+
   }
 
   doSomething(ctrl:NgModel){

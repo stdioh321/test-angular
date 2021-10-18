@@ -1,7 +1,9 @@
-<div *ngFor="let task of tasks">
-    <div class="d-flex">
-        <div class="mr-3">{{task.id}}</div>
-        <div class="mr-auto">{{task.text}}</div>
-        <div class="">{{task.day}}</div>
+<div class="row">
+
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let task of tasks">
+        <div class="mb-1">
+            <app-task [task]="task"></app-task>
+        </div>
     </div>
+
 </div>

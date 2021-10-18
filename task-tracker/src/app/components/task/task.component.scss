@@ -1,0 +1,6 @@
+.task {
+    &>div:nth-child(2) {
+        overflow-y: auto;
+        max-height: 200px;
+    }
+}
