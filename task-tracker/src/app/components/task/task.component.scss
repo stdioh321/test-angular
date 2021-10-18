@@ -3,4 +3,7 @@
         overflow-y: auto;
         max-height: 200px;
     }
+    .id {
+        min-width: clamp(30px, 35px, 60px);
+    }
 }

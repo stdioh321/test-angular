@@ -11,11 +11,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmComponent } from './components/modals/confirm/confirm.component';
+import { ErasemePipe } from './filters/eraseme.pipe';
+import { BasicModalComponent } from './components/modals/basic-modal/basic-modal.component';
+import { PutTaskComponent } from './components/tasks/put/put-task/put-task.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { ConfirmComponent } from './components/modals/confirm/confirm.component'
     ButtonComponent,
     TasksComponent,
     TaskComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    ErasemePipe,
+    BasicModalComponent,
+    PutTaskComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,8 @@ import { ConfirmComponent } from './components/modals/confirm/confirm.component'
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
 
   ],
   providers: [

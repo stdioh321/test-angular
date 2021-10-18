@@ -1,3 +1,4 @@
+import { ErasemePipe } from './../../filters/eraseme.pipe';
 import { Task, Convert } from './../../models/Task';
 import { Component, ElementRef, OnInit, TemplateRef } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -23,10 +24,9 @@ import { ConfirmComponent } from '../modals/confirm/confirm.component';
 export class TasksComponent implements OnInit {
   tasks: Task[] = [];
   trash: any;
-  private tasksService: TaskService;
 
-  constructor(tasksService: TaskService, private modalService: NgbModal) {
-    this.tasksService = tasksService;
+
+  constructor(private tasksService: TaskService, private modalService: NgbModal) {
   }
 
   async ngOnInit(): Promise<any> {

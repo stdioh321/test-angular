@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": 2,
-      "text": "Groceries",
+      "text": "😡 Groceries",
       "day": 1634513946305,
       "reminder": true
     },
@@ -47,18 +47,6 @@
       "day": 1634581938140,
       "reminder": true,
       "id": 10
-    },
-    {
-      "text": "Sausages",
-      "day": 1634581938146,
-      "reminder": true,
-      "id": 11
-    },
-    {
-      "text": "Mouse",
-      "day": 1634581938171,
-      "reminder": true,
-      "id": 12
     },
     {
       "text": "Computer",
@@ -119,12 +107,6 @@
       "day": 1634581982919,
       "reminder": true,
       "id": 23
-    },
-    {
-      "text": "Table",
-      "day": 1634581982924,
-      "reminder": true,
-      "id": 24
     },
     {
       "text": "Towels",
@@ -245,6 +227,18 @@
       "day": 1660462918671,
       "reminder": true,
       "id": 45
+    },
+    {
+      "text": "asdasdasdsad",
+      "day": 1634597474986,
+      "reminder": true,
+      "id": 46
+    },
+    {
+      "text": "Carro",
+      "day": 1634597486504,
+      "reminder": true,
+      "id": 47
     }
   ]
 }

@@ -1,5 +1,3 @@
-
-
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { environment } from './../../environments/environment';
 import { Injectable, Optional } from '@angular/core';
@@ -12,12 +10,10 @@ import { Task, Convert } from '../models/Task';
   providedIn: 'root'
 })
 export class TaskService {
-  private http: HttpClient;
   private url: string;
 
-  constructor(http: HttpClient) {
-    this.http = http;
-    this.url = `${environment.baseUrl}/tasks`
+  constructor(private http: HttpClient) {
+    this.url = `${environment.baseUrl}/tasks`;
   }
 
   async findAll(): Promise<Task[]> {
@@ -32,8 +28,6 @@ export class TaskService {
     return this.http.delete(`${this.url}/${id}`).toPromise();
   }
   async save(task: Task) {
-    console.log(task);
-
     return this.http.post(`${this.url}`, task).toPromise();
   }
 }
