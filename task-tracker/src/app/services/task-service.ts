@@ -5,30 +5,35 @@ import { environment } from './../../environments/environment';
 import { Injectable, Optional } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { Task,Convert } from '../models/Task';
+import { Task, Convert } from '../models/Task';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-  private http:HttpClient;
-  private url:string;
+  private http: HttpClient;
+  private url: string;
 
-  constructor(http:HttpClient) {
+  constructor(http: HttpClient) {
     this.http = http;
     this.url = `${environment.baseUrl}/tasks`
-   }
+  }
 
-   async findAll():Promise<Task[]>{
+  async findAll(): Promise<Task[]> {
     return (await this.http.get(this.url).toPromise()) as Task[];
-   }
-   async findById(id:number):Promise<Task>{
-      let res = (await this.http.get(`${this.url}/${id}`).toPromise());
+  }
+  async findById(id: number): Promise<Task> {
+    let res = (await this.http.get(`${this.url}/${id}`).toPromise());
 
-      return res as Task;
-   }
-   async deleteById(id:number){
+    return res as Task;
+  }
+  async deleteById(id: number) {
     return this.http.delete(`${this.url}/${id}`).toPromise();
-   }
+  }
+  async save(task: Task) {
+    console.log(task);
+
+    return this.http.post(`${this.url}`, task).toPromise();
+  }
 }

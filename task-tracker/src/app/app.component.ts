@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, TemplateRef } from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmComponent } from './components/modals/confirm/confirm.component';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +10,14 @@ import { NgModel } from '@angular/forms';
 })
 export class AppComponent  implements OnInit {
   title = 'task-tracker';
-  public msg:number = 1;
+
+
+  constructor() {}
+
+
 
   ngOnInit(){
 
   }
 
-  doSomething(ctrl:NgModel){
-    const {model} = ctrl;
-    console.log(model);
-  }
 }
