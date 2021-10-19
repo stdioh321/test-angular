@@ -1,27 +1,49 @@
-# TaskTracker
+# Task Tracker
+Task Tracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
-## Development server
+# Requirements
+* [Node/Npm](https://nodejs.org/en/download/)
+* [Angular](https://angular.io/guide/setup-local)
+* [Angular Cli](https://angular.io/cli)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Setup
+```sh
+git clone https://github.com/stdioh321/test-angular.git
+cd task-tracker
+npm install
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Run
+```sh
+npm run start:mock
+```
+The application will run at the port **4200** and the server at **3000**.
 
-## Build
+Open your browser at:
+**http://localhost:4200**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+and at:
+**http://localhost:3000/tasks**
 
-## Running unit tests
+|Terminal|Index|
+|:--|:--|
+|![Terminal](docs/screenshot_01.png)|![Index](docs/screenshot_02.png)|
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+|Add|Update|
+|:--|:--|
+|![Add](docs/screenshot_03.png)|![Update](docs/screenshot_04.png)|
 
-## Running end-to-end tests
+|Delete|Json-Server|
+|:--|:--|
+|![Delete](docs/screenshot_05.png)|![Json-Server](docs/screenshot_06.png)|
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# References
+* [Tutorial Youtube](https://www.youtube.com/watch?v=3dHNOWTI7H8)
+* [ngrx](https://ngrx.io/guide/store)
+* [ngrx advanced](https://ngrx.io/guide/store/walkthrough)
+* [ngrx Youtube](https://www.youtube.com/watch?v=GSc1fHXVBGg)
+* [NgBootstrap](https://ng-bootstrap.github.io/#/components/accordion/examples)
