@@ -7,7 +7,8 @@
         <div class="small text-muted font-italic">{{task?.day | date:"yyyy-MM-dd HH:mm:ss"}}</div>
     </div>
 
-    <div>
+    <div class="d-flex flex-column">
+        <span class="pointer"><fa-icon [ngStyle]="{'color':'blue'}" [icon]="fa.faEdit" (click)="clickEdit(task)"></fa-icon></span>
         <span class="pointer"><fa-icon [ngStyle]="{'color':'red'}" [icon]="fa.faTimes" (click)="clickDelete(task)"></fa-icon></span>
     </div>
 </div>

@@ -1,10 +1,10 @@
 {
   "tasks": [
     {
-      "id": 2,
       "text": "😡 Groceries",
       "day": 1634513946305,
-      "reminder": true
+      "reminder": false,
+      "id": 2
     },
     {
       "id": 3,
@@ -25,13 +25,7 @@
       "id": 6
     },
     {
-      "text": "Hat",
-      "day": 1634581938134,
-      "reminder": true,
-      "id": 8
-    },
-    {
-      "text": "Gloves",
+      "text": "Glovesssss",
       "day": 1634581938140,
       "reminder": true,
       "id": 10
@@ -55,7 +49,7 @@
       "id": 15
     },
     {
-      "text": "Fish",
+      "text": "fishhhh",
       "day": 1634581938189,
       "reminder": true,
       "id": 16
@@ -223,9 +217,9 @@
       "id": 47
     },
     {
-      "text": "Capital",
+      "text": "Capital Inicial",
       "day": 1634610943828,
-      "reminder": true,
+      "reminder": false,
       "id": 48
     },
     {
@@ -239,6 +233,30 @@
       "day": 1634611105177,
       "reminder": true,
       "id": 50
+    },
+    {
+      "text": "ssssssssssssss",
+      "day": 1634613491871,
+      "reminder": true,
+      "id": 51
+    },
+    {
+      "text": "ssssssssss",
+      "day": 1634615053755,
+      "reminder": false,
+      "id": 52
+    },
+    {
+      "text": "mamonas",
+      "day": 1634615068986,
+      "reminder": true,
+      "id": 53
+    },
+    {
+      "text": "asdasd",
+      "day": 1634615232553,
+      "reminder": true,
+      "id": 54
     }
   ]
 }

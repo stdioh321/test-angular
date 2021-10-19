@@ -1,6 +1,6 @@
 import { Task } from 'src/app/models/Task';
 import { createReducer, on } from "@ngrx/store";
-import { add, addAll, clear, remove } from './task-actions';
+import { add, addAll, clear, remove, update } from './task-actions';
 
 
 
@@ -10,6 +10,10 @@ const _taskReducer = createReducer(
   initialState,
   on(addAll, (entries, { tasks }) => [...tasks]),
   on(add, (entries, task) => [...entries, task]),
+  on(update, (entries, task) => entries.map(it => {
+    if (it.id == task.id) return task;
+    return it;
+  })),
   on(remove, (entries, { taskId }) => entries.filter(it => it.id != taskId)),
   on(clear, (_) => []),
 

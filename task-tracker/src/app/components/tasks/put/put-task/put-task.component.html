@@ -18,7 +18,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Add Task</h1>
+            <h1>{{task?"Edit":"Add"}} Task</h1>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -31,8 +31,10 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="reminder">Reminder</label>
+
                         <div class="d-flex justify-content-start">
-                            <input type="checkbox" id="reminder" class="form-control" formControlName="reminder" />
+                            <mat-slide-toggle id="reminder" formControlName="reminder"></mat-slide-toggle>
+                            <!-- <input type="checkbox" id="reminder" class="form-control" formControlName="reminder" /> -->
                         </div>
                     </div>
                 </div>

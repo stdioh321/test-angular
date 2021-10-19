@@ -30,4 +30,7 @@ export class TaskService {
   async save(task: Task) {
     return this.http.post(`${this.url}`, task).toPromise();
   }
+  async update(id: number, task: Task) {
+    return this.http.put(`${this.url}/${id}`, task).toPromise();
+  }
 }

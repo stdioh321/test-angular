@@ -1,3 +1,4 @@
+import { PutTaskComponent } from './put/put-task/put-task.component';
 import { add, addAll, remove } from './../../states/task-actions';
 import { ErasemePipe } from './../../filters/eraseme.pipe';
 import { Task, Convert } from './../../models/Task';
@@ -68,6 +69,15 @@ export class TasksComponent implements OnInit {
     } catch (error) {
       console.log({ error });
     }
+  }
+
+  async onTaskEdit(task: Task) {
+    let modalRef = this.modalService.open(PutTaskComponent);
+    (modalRef.componentInstance as PutTaskComponent).task = task;
+    let proceed = await modalRef.closed.toPromise();
+    if (!proceed) return;
+
+
   }
 
 }

@@ -1,3 +1,4 @@
+
 // CUSTOM ####################################################################################################################
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
@@ -21,7 +22,8 @@ import { BasicModalComponent } from './components/modals/basic-modal/basic-modal
 import { PutTaskComponent } from './components/tasks/put/put-task/put-task.component';
 import { StoreModule } from '@ngrx/store';
 import { taskReducer } from './states/task-reducer';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { taskReducer } from './states/task-reducer';
     FontAwesomeModule,
     NgbModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ taskEntries: taskReducer })
+    StoreModule.forRoot({ taskEntries: taskReducer }),
+    BrowserAnimationsModule,
+    MatSlideToggleModule
 
   ],
   providers: [
