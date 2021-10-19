@@ -19,6 +19,8 @@ import { ConfirmComponent } from './components/modals/confirm/confirm.component'
 import { ErasemePipe } from './filters/eraseme.pipe';
 import { BasicModalComponent } from './components/modals/basic-modal/basic-modal.component';
 import { PutTaskComponent } from './components/tasks/put/put-task/put-task.component';
+import { StoreModule } from '@ngrx/store';
+import { taskReducer } from './states/task-reducer';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { PutTaskComponent } from './components/tasks/put/put-task/put-task.compo
     HttpClientModule,
     FontAwesomeModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({ taskEntries: taskReducer })
 
   ],
   providers: [

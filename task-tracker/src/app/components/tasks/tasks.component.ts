@@ -1,3 +1,4 @@
+import { add, addAll, remove } from './../../states/task-actions';
 import { ErasemePipe } from './../../filters/eraseme.pipe';
 import { Task, Convert } from './../../models/Task';
 import { Component, ElementRef, OnInit, TemplateRef } from '@angular/core';
@@ -9,6 +10,9 @@ import { environment } from 'src/environments/environment';
 import { TaskService } from 'src/app/services/task-service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ConfirmComponent } from '../modals/confirm/confirm.component';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 
@@ -22,16 +26,19 @@ import { ConfirmComponent } from '../modals/confirm/confirm.component';
 })
 
 export class TasksComponent implements OnInit {
-  tasks: Task[] = [];
-  trash: any;
+  tasks$!: Observable<Task[]>;
 
-
-  constructor(private tasksService: TaskService, private modalService: NgbModal) {
+  constructor(
+    private tasksService: TaskService,
+    private modalService: NgbModal,
+    private storeTasks: Store<{ taskEntries: Task[] }>) {
+    this.tasks$ = storeTasks.select("taskEntries");
   }
+
 
   async ngOnInit(): Promise<any> {
     try {
-      this.tasks = await this.tasksService.findAll();
+      this.storeTasks.dispatch(addAll({ tasks: await this.tasksService.findAll() }));
     } catch (err) {
       if (err instanceof HttpErrorResponse) {
         console.log({ err });
@@ -57,11 +64,9 @@ export class TasksComponent implements OnInit {
     try {
       const id: number = task.id as number;
       await this.tasksService.deleteById(id);
-      this.tasks = this.tasks.filter(task => task.id != id);
+      this.storeTasks.dispatch(remove({ taskId: id }));
     } catch (error) {
       console.log({ error });
-
-      // }
     }
   }
 

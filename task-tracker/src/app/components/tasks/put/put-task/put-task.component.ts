@@ -3,6 +3,8 @@ import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Task } from 'src/app/models/Task';
 import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { add } from 'src/app/states/task-actions';
 
 @Component({
   selector: 'app-put-task',
@@ -21,7 +23,9 @@ export class PutTaskComponent implements OnInit {
 
   get text() { return this.form.get("text") };
   get reminder() { return this.form.get("reminder") };
-  constructor(private activeModal: NgbActiveModal, private taskService: TaskService) { }
+  constructor(private activeModal: NgbActiveModal, private taskService: TaskService,
+    private storeTask: Store<Task>
+  ) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -38,7 +42,8 @@ export class PutTaskComponent implements OnInit {
       tempFormData["day"] = new Date().getTime();
       let data = new Task(tempFormData);
       try {
-        let taskAdded = await this.taskService.save(data);
+        let taskAdded = await this.taskService.save(data) as Task;
+        this.storeTask.dispatch(add(taskAdded));
         this.activeModal.close(taskAdded);
       } catch (error) {
         console.log({ error });

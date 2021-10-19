@@ -25,22 +25,10 @@
       "id": 6
     },
     {
-      "text": "Shirt",
-      "day": 1634581938129,
-      "reminder": true,
-      "id": 7
-    },
-    {
       "text": "Hat",
       "day": 1634581938134,
       "reminder": true,
       "id": 8
-    },
-    {
-      "text": "Shoes",
-      "day": 1634581938137,
-      "reminder": true,
-      "id": 9
     },
     {
       "text": "Gloves",
@@ -229,16 +217,28 @@
       "id": 45
     },
     {
-      "text": "asdasdasdsad",
-      "day": 1634597474986,
-      "reminder": true,
-      "id": 46
-    },
-    {
       "text": "Carro",
       "day": 1634597486504,
       "reminder": true,
       "id": 47
+    },
+    {
+      "text": "Capital",
+      "day": 1634610943828,
+      "reminder": true,
+      "id": 48
+    },
+    {
+      "text": "Mais",
+      "day": 1634610953856,
+      "reminder": true,
+      "id": 49
+    },
+    {
+      "text": "Legiao",
+      "day": 1634611105177,
+      "reminder": true,
+      "id": 50
     }
   ]
 }
